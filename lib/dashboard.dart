@@ -12,10 +12,79 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
+
+    //this helps in getting the size of width of screen 
+  final double width = MediaQuery.of(context).size.width;
+
     return   Scaffold(
       body: SingleChildScrollView(
-        child: Column(children:const  [
-           MyAppBar(),
+        child: Column(children:  [
+           const MyAppBar(),
+
+
+           //---------------------Top Bar-------------
+           Container(
+            padding: const EdgeInsets.all(8),
+            width: width,
+            height: 60,
+            color: Colors.grey.shade200,
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.pink,
+                  width: 1.5,
+                
+                ),
+                borderRadius: BorderRadius.circular(9),
+                
+               ),
+               child:  Padding(
+                  padding:  const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Row(children: const [
+                    Text("Rs 50 Top-up ma OnePluss 11"),
+                    SizedBox(width: 60.0,),
+                    Text("TOPUP NOW",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16,color: Colors.pink),),
+                  ]),
+                  
+                )
+            ),
+
+           ),
+
+           Container(
+            padding: const EdgeInsets.all(8),
+            width: width,
+            height: 100,
+            color: Colors.white,
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.white,
+                  width: 1.5,
+                
+                ),
+                borderRadius: BorderRadius.circular(9),
+                
+               ),
+               child:  Padding(
+                  padding:  const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Row(children:  [
+                    Column(
+                      children: const [
+                        Text("Khalti Bank Direct",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                        Text("बैंक लिङ्क गरि बिना-लोड "),
+                        Text("भुक्तानी"),
+                      ],
+                    ),
+                    const SizedBox(width: 60.0,),
+                    const Text("LINK BANK NOW",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16,color: Colors.pink),),
+                  ]),
+                  
+                )
+            ),
+
+           ),
+           
 
         ]),
       ),

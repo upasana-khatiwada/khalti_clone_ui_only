@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:khalti_clone_ui/add_money.dart';
+import 'package:khalti_clone_ui/send_money.dart';
 import 'my_account.dart';
 import 'promo_code.dart';
 
@@ -209,6 +211,88 @@ class _MyAppBarState extends State<MyAppBar> {
                     ),
                   ),
                 ),
+
+                const SizedBox(width: 30.0,),
+                Column(
+                  children: [
+                    InkWell(
+                      onTap: () => {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (BuildContext context) {
+                          return const AddMoney();
+                        })),
+                      },
+                      // ignore: sized_box_for_whitespace
+                      child: Container(
+                        height: 35,
+                        width: 35,
+                          child: Container(
+                            height: 25,
+                            width: 20,
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(40),
+                            color: Colors.white),
+                            child: Image.asset(
+                            "image/wallet.png",
+                            color: Colors.purple,
+                            fit: BoxFit.contain,
+                          ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 10,),
+                      Column(
+                        children: const [
+                           Text("Add ",
+                          style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
+                          Text("Money",
+                          style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
+                        ],
+                        
+                      ),
+                  ],
+                  
+                ),
+                const SizedBox(width: 25.0,),
+                Column(
+                  children: [
+                    InkWell(
+                      onTap: () => {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (BuildContext context) {
+                          return const SendMoney();
+                        })),
+                      },
+                      // ignore: sized_box_for_whitespace
+                      child: Container(
+                        height: 40,
+                        width: 40,
+                          child: Container(
+                            height: 30,
+                            width: 30,
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(40),
+                            color: Colors.white),
+                            child: const Icon(Icons.phone_android,
+                            color: Colors.purple,)
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 10,),
+                      Column(
+                        children: const [
+                           Text("Send ",
+                          style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
+                          Text("Money",
+                          style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
+                        ],
+                        
+                      ),
+                  ],
+                  
+                ),
+
+                
+              
+
 
                 
               ],
