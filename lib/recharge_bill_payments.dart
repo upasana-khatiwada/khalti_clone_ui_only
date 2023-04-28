@@ -84,23 +84,10 @@ class _RechargeAndBillPaymentState extends State<RechargeAndBillPayment> {
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
-                color: Colors.purple..shade100),
+                color: Colors.purple.shade100),
             child: _showMore
                 ? Row(
-                    children: [
-                      Text(
-                        "View more",
-                        style: TextStyle(
-                            color: Colors.purple.shade900,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      Icon(
-                        Icons.keyboard_arrow_down,
-                        color: Colors.purple.shade900,
-                      )
-                    ],
-                  )
-                : Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         "View less",
@@ -108,6 +95,23 @@ class _RechargeAndBillPaymentState extends State<RechargeAndBillPayment> {
                             color: Colors.purple.shade900,
                             fontWeight: FontWeight.bold),
                       ),
+                      const SizedBox(width: 5,),
+                      Icon(
+                        Icons.keyboard_arrow_down,
+                        color: Colors.purple.shade900,
+                      )
+                    ],
+                  )
+                : Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "View more",
+                        style: TextStyle(
+                            color: Colors.purple.shade900,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(width: 5,),
                       Icon(
                         Icons.keyboard_arrow_up,
                         color: Colors.purple.shade900,
