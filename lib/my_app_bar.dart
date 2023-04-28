@@ -1,8 +1,12 @@
+// ignore_for_file: sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
+import 'package:khalti_clone_ui/my_account.dart';
+import 'package:khalti_clone_ui/promo_code.dart';
 import 'package:khalti_clone_ui/add_money.dart';
 import 'package:khalti_clone_ui/send_money.dart';
-import 'my_account.dart';
-import 'promo_code.dart';
+// import 'my_account.dart';
+// import 'promo_code.dart';
 
 class MyAppBar extends StatefulWidget {
   const MyAppBar({Key? key}) : super(key: key);
@@ -13,10 +17,12 @@ class MyAppBar extends StatefulWidget {
 
 class _MyAppBarState extends State<MyAppBar> {
   bool showBalance = false;
-
   @override
   Widget build(BuildContext context) {
+    final double width = MediaQuery.of(context).size.width;
     return Container(
+      height: 160,
+      width: width,
       decoration: const BoxDecoration(
         color: Colors.purple,
         borderRadius: BorderRadius.only(
@@ -69,7 +75,6 @@ class _MyAppBarState extends State<MyAppBar> {
                       return const PromoCode();
                     })),
                   },
-                  // ignore: sized_box_for_whitespace
                   child: Container(
                     height: 25,
                     width: 25,
@@ -100,201 +105,215 @@ class _MyAppBarState extends State<MyAppBar> {
             const SizedBox(
               height: 10.0,
             ),
+
+            //-----------------Khalti balance------------------
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: 8.0,
-                    left: 8.0,
-                    right: 0.0,
-                    bottom: 8.0,
-                  ),
-                  child: Container(
-                    width: 175,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(8),
+                Stack(
+                  children: [
+                    Container(
+                      width: 190,
+                      height: 100,
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                    top: 8.0,
-                    left: 8.0,
-                    right: 0.0,
-                    bottom: 0.0,
-                  ),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: Row(
+                    Positioned(
+                      child: Container(
+                          width: 175,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                const Text(
-                                  "रु",
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.purple,
-                                  ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Row(children: [
+                                    const Text(
+                                      "रु",
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.purple,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 10,
+                                    ),
+                                    showBalance
+                                        ? const Text(
+                                            "882567.68",
+                                            style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.purple,
+                                            ),
+                                          )
+                                        : const Text(
+                                            "XXXXX",
+                                            style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.purple,
+                                            ),
+                                          ),
+                                  ]),
                                 ),
                                 const SizedBox(
-                                  width: 10,
+                                  height: 5.0,
                                 ),
-                                showBalance
-                                    ? const Text(
-                                        "882.68",
-                                        style: TextStyle(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.purple,
-                                        ),
-                                      )
-                                    : const Text(
-                                        "XXXXX",
-                                        style: TextStyle(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.purple,
-                                        ),
-                                      )
+                                Row(
+                                  children: [
+                                    GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            showBalance = !showBalance;
+                                          });
+                                        },
+                                        child: showBalance
+                                            ? const Icon(
+                                                Icons.visibility,
+                                                color: Colors.purple,
+                                              )
+                                            : const Icon(
+                                                Icons.visibility_off,
+                                                color: Colors.purple,
+                                              )),
+                                    const Text(
+                                      "Khalti Balance",
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: Colors.purple,
+                                      ),
+                                    )
+                                  ],
+                                )
                               ],
                             ),
-                          ),
-                          const SizedBox(
-                            height: 5.0,
-                          ),
-                          Row(
-                            children: [
-                              GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      showBalance = !showBalance;
-                                    });
-                                  },
-                                  child: showBalance
-                                      ? const Icon(
-                                          Icons.visibility,
-                                          color: Colors.purple,
-                                        )
-                                      : const Icon(
-                                          Icons.visibility_off,
-                                          color: Colors.purple,
-                                        )),
-                              const Text(
-                                "Khalti Balance",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.purple,
-                                ),
-                              )
-                            ],
-                          )
-                        ],
+                          )),
+                    ),
+                    Positioned(
+                      left: 161,
+                      top: 30,
+                      child: Container(
+                        height: 25,
+                        width: 25,
+                        decoration: BoxDecoration(
+                            color: Colors.grey.shade400,
+                            borderRadius: BorderRadius.circular(50)),
+                        child: const Icon(
+                          Icons.restart_alt,
+                          color: Colors.purple,
+                          size: 20,
+                        ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
-                //Adding refresh button
-                Positioned(
-                  left: 110,
-                  top: 40,
-                  child: Container(
-                    //height: 22,
-                   // width: 22,
-                    decoration: BoxDecoration(
-                        color: Colors.grey.shade100,
-                        borderRadius: BorderRadius.circular(50),
-                        ),
-                    child: const Icon(
-                      Icons.restart_alt,
-                      color: Colors.purple,
-                      size: 20,
-                    ),
-                  ),
+                const SizedBox(
+                  width: 10.0,
                 ),
-
-                const SizedBox(width: 30.0,),
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     InkWell(
                       onTap: () => {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (BuildContext context) {
+                        Navigator.push(context, MaterialPageRoute(
+                            builder: (BuildContext context) {
                           return const AddMoney();
                         })),
                       },
-                      // ignore: sized_box_for_whitespace
                       child: Container(
                         height: 35,
                         width: 35,
-                          child: Container(
-                            height: 25,
-                            width: 20,
-                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(40),
-                            color: Colors.white),
-                            child: Image.asset(
+                        child: Container(
+                          height: 25,
+                          width: 25,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(40),
+                          ),
+                          child: Image.asset(
                             "image/wallet.png",
                             color: Colors.purple,
                             fit: BoxFit.contain,
                           ),
-                          ),
                         ),
                       ),
-                      const SizedBox(height: 10,),
-                      Column(
-                        children: const [
-                           Text("Add ",
-                          style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
-                          Text("Money",
-                          style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
-                        ],
-                        
-                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Column(
+                      children: const [
+                        Text(
+                          "Add ",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        ),
+                        Text(
+                          "Money",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        ),
+                      ],
+                    ),
+                   
                   ],
-                  
                 ),
-                const SizedBox(width: 25.0,),
+                const SizedBox(width: 10,),
                 Column(
-                  children: [
-                    InkWell(
-                      onTap: () => {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (BuildContext context) {
-                          return const SendMoney();
-                        })),
-                      },
-                      // ignore: sized_box_for_whitespace
-                      child: Container(
-                        height: 40,
-                        width: 40,
-                          child: Container(
-                            height: 30,
-                            width: 30,
-                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(40),
-                            color: Colors.white),
-                            child: const Icon(Icons.phone_android,
-                            color: Colors.purple,)
+                        children: [
+                          InkWell(
+                            onTap: () => {
+                              Navigator.push(context, MaterialPageRoute(
+                                  builder: (BuildContext context) {
+                                return const SendMoney();
+                              })),
+                            },
+                            child: Container(
+                              height: 40,
+                              width: 40,
+                              child: Container(
+                                height: 30,
+                                width: 30,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(40),
+                                    color: Colors.white),
+                                child: const Icon(
+                                  Icons.phone_android,
+                                  color: Colors.purple,
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                      const SizedBox(height: 10,),
-                      Column(
-                        children: const [
-                           Text("Send ",
-                          style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
-                          Text("Money",
-                          style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Column(
+                            children: const [
+                              Text(
+                                "Send ",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              ),
+                              Text(
+                                "Money",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              ),
+                            ],
+                          ),
                         ],
-                        
                       ),
-                  ],
-                  
-                ),
+                const SizedBox(width: 10,),
 
-                
-              
-
-
-                
               ],
             )
           ],
