@@ -36,9 +36,12 @@ class MyIconBox extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(left: 3, bottom: 8.0),
-              child: Text(
-                iconName,
-                style: const TextStyle(fontSize: 12),
+              child: Align(
+                alignment: Alignment.center,
+                child: Text(
+                  iconName,
+                  style: const TextStyle(fontSize: 12),
+                ),
               ),
             ),
             const SizedBox(height: 2,),

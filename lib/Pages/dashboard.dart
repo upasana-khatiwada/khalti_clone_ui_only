@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'recharge_bill_payments.dart';
+import 'package:khalti_clone_ui/Dashboard%20materials/featured_services.dart';
+import '../Dashboard materials/recharge_bill_payments.dart';
 
-import 'my_app_bar.dart';
+import '../Appbar functions/my_app_bar.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -147,33 +148,6 @@ class _DashboardState extends State<Dashboard> {
               height: 10,
             ),
 
-            // Container(
-            //   color: Colors.white,
-            //   // decoration: const BoxDecoration(
-            //   //   color: Colors.white,
-            //   // ),
-            //   child: Column(
-            //     crossAxisAlignment: CrossAxisAlignment.start,
-            //     children: const [
-            //       SizedBox(
-            //         height: 10,
-            //       ),
-            //       Padding(
-            //         padding: EdgeInsets.all(4.0),
-            //         child: Align(
-            //           alignment: Alignment.centerLeft,
-            //           child: Text(
-            //             "Recharge & Bill Payments",
-            //             style:
-            //                 TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-            //           ),
-            //         ),
-            //       ),
-            //       RechargeAndBillPayment(),
-            //     ],
-            //   ),
-            // )
-
             Container(
               padding: const EdgeInsets.all(8),
               width: width,
@@ -260,21 +234,55 @@ class _DashboardState extends State<Dashboard> {
             ),
             Container(
               padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(4),
-                    //rethrow image loading error
-                    // image: const DecorationImage(
-                    //    image: AssetImage("image/SuscribeNow.jpg"),
-                    // )
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(4),
+                //rethrow image loading error
+                // image: const DecorationImage(
+                //    image: AssetImage("image/SuscribeNow.jpg"),
+                // )
+              ),
+              //doesnot load other icon so its no
+              //child: Image.asset("image/SuscribeNow.jpg"),
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset("image/SuscribeNow.jpg")),
+            ),
+            Container(
+              color: Colors.grey[300],
+              height: 10,
+            ),
+            // Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: Align(alignment: Alignment.centerLeft,
+            //     child: FeaturedServices(title: "Featured Services")),
+            // ),
+
+            Container(
+              color: Colors.white,
+              // decoration: const BoxDecoration(
+              //   color: Colors.white,
+              // ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.all(4.0),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "Featured Services",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18),
+                      ),
                     ),
-                    //doesnot load other icon so its no
-                    //child: Image.asset("image/SuscribeNow.jpg"),
-                    child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Image.asset("image/SuscribeNow.jpg")),
-
-
+                  ),
+                  FeaturedServices(),
+                ],
+              ),
             ),
             Container(
               color: Colors.grey[300],

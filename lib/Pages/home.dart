@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
-import 'package:khalti_clone_ui/dashboard.dart';
-import 'package:khalti_clone_ui/menu.dart';
-import 'package:khalti_clone_ui/scan_pay.dart';
-import 'package:khalti_clone_ui/support.dart';
-import 'package:khalti_clone_ui/transactions.dart';
+import 'package:khalti_clone_ui/Pages/dashboard.dart';
+import 'package:khalti_clone_ui/Pages/menu.dart';
+import 'package:khalti_clone_ui/Pages/scan_pay.dart';
+import 'package:khalti_clone_ui/Pages/support.dart';
+import 'package:khalti_clone_ui/Pages/transactions.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

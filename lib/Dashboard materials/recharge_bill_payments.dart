@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'icon_box_property.dart';
+import '../icon_box_property.dart';
 
 class RechargeAndBillPayment extends StatefulWidget {
   const RechargeAndBillPayment({super.key});
