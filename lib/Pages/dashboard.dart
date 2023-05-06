@@ -3,7 +3,10 @@ import 'package:khalti_clone_ui/Dashboard%20materials/featured_services.dart';
 import '../Dashboard materials/recharge_bill_payments.dart';
 
 import '../Appbar functions/my_app_bar.dart';
-
+import 'package:khalti_clone_ui/Dashboard materials/other_services.dart';
+import 'package:khalti_clone_ui/Dashboard materials/bazar_products.dart';
+import 'package:khalti_clone_ui/Dashboard materials/automatic_slideshow.dart';
+import 'package:khalti_clone_ui/Dashboard materials/insurance_services.dart';
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
 
@@ -283,6 +286,167 @@ class _DashboardState extends State<Dashboard> {
                   FeaturedServices(),
                 ],
               ),
+            ),
+            Container(
+              color: Colors.grey[300],
+              height: 10,
+            ),
+            Container(
+              color: Colors.white,
+              // decoration: const BoxDecoration(
+              //   color: Colors.white,
+              // ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.all(4.0),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "Other Services",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18),
+                      ),
+                    ),
+                  ),
+                  OtherServices(),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(1),
+              width: width,
+              height: 30,
+              color: Colors.grey.shade200,
+              child: Container(
+                  decoration: const BoxDecoration(
+                    // border: Border.all(
+                    color: Color.fromARGB(255, 167, 237, 203),
+                    //   width: 1.5,
+                    // ),
+                    //borderRadius: BorderRadius.circular(9),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                    child: Row(children: [
+                      const Text(
+                        "  View All Bazar Products ",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(
+                        width: 90.0,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (BuildContext context) {
+                            return const BazarProducts();
+                          }));
+                        },
+                        child: const Align(
+                          alignment: Alignment.centerRight,
+                          child: Text(
+                            "Tap here",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: Color.fromARGB(255, 1, 54, 3)),
+                          ),
+                        ),
+                      ),
+                    ]),
+                  )),
+            ),
+            Container(
+              color: Colors.grey[300],
+              height: 10,
+            ),
+            const AutomaticCarousel(),
+            Container(
+              color: Colors.grey[300],
+              height: 10,
+            ),
+            Container(
+              color: Colors.white,
+              // decoration: const BoxDecoration(
+              //   color: Colors.white,
+              // ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.all(4.0),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "Insurance Services",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18),
+                      ),
+                    ),
+                  ),
+                  InsuranceServices(),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(1),
+              width: width,
+              height: 50,
+              color: Colors.grey.shade200,
+              child: Container(
+                  decoration: const BoxDecoration(
+                    // border: Border.all(
+                    color: Color.fromARGB(255, 247, 191, 210),
+                    //   width: 1.5,
+                    // ),
+                    //borderRadius: BorderRadius.circular(9),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                    child: Row(children: [
+                      Column(
+                        children: const [
+                           Text(
+                            " Get health benefits worth rs 3.5 lakhs ",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            " @350 ",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        width: 90.0,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (BuildContext context) {
+                            return const BazarProducts();
+                          }));
+                        },
+                        child: const Align(
+                          alignment: Alignment.centerRight,
+                          child: Text(
+                            "Buy now",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: Colors.pink),
+                          ),
+                        ),
+                      ),
+                    ]),
+                  )),
             ),
             Container(
               color: Colors.grey[300],
