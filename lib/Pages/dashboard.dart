@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:khalti_clone_ui/Dashboard%20materials/featured_services.dart';
+ import 'package:khalti_clone_ui/Dashboard%20materials/featured_services.dart';
+// import 'package:khalti_clone_ui/Dashboard%20materials/icon_box_border.dart';
 import '../Dashboard materials/recharge_bill_payments.dart';
+import 'package:khalti_clone_ui/Dashboard materials/government_services.dart';
 
 import '../Appbar functions/my_app_bar.dart';
 import 'package:khalti_clone_ui/Dashboard materials/other_services.dart';
 import 'package:khalti_clone_ui/Dashboard materials/bazar_products.dart';
 import 'package:khalti_clone_ui/Dashboard materials/automatic_slideshow.dart';
 import 'package:khalti_clone_ui/Dashboard materials/insurance_services.dart';
+import 'package:khalti_clone_ui/Dashboard materials/registration_services.dart';
+import 'package:khalti_clone_ui/Dashboard materials/stock_payments.dart';
+
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
 
@@ -293,9 +298,7 @@ class _DashboardState extends State<Dashboard> {
             ),
             Container(
               color: Colors.white,
-              // decoration: const BoxDecoration(
-              //   color: Colors.white,
-              // ),
+            
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -451,6 +454,72 @@ class _DashboardState extends State<Dashboard> {
             Container(
               color: Colors.grey[300],
               height: 10,
+            ),
+            
+          RegistrationServices(),
+          Container(
+              color: Colors.grey[300],
+              height: 10,
+            ),
+            GovernmentServices(),
+            Container(
+              color: Colors.grey[300],
+              height: 10,
+            ),
+            StockBrokerPayments(),
+             Container(
+              color: Colors.white,
+              // decoration: const BoxDecoration(
+              //   color: Colors.white,
+              // ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(
+                    height: 10,
+                  ),
+                   Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Row(
+                        children:  [
+                          const Text(
+                            "We are accepted online at",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 18),
+                          ),
+                          SizedBox(width: width-290),
+                          const Text("See all",
+                           style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 18),)
+                        ],
+                      ),
+                    ),
+                  ),
+                  FeaturedServices(),
+                ],
+              ),
+            ),
+             Container(
+              color: Colors.grey[300],
+              height: 10,
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(4),
+                //rethrow image loading error
+                // image: const DecorationImage(
+                //    image: AssetImage("image/SuscribeNow.jpg"),
+                // )
+              ),
+              //doesnot load other icon so its no
+              //child: Image.asset("image/SuscribeNow.jpg"),
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset("image/SuscribeNow.jpg")),
             ),
           ],
         ),

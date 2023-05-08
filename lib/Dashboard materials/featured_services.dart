@@ -29,7 +29,8 @@ class FeaturedServices extends StatelessWidget {
     return Column(
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
@@ -43,12 +44,13 @@ class FeaturedServices extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-              child: Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    title,
-                    style: const TextStyle(fontSize: 14,fontWeight: FontWeight.bold),
-                  )),
+              child: Center(
+                child: Text(
+                  title,
+                  style: const TextStyle(fontSize: 14,fontWeight: FontWeight.bold,),
+                  textAlign: TextAlign.center,
+                ),
+              ),
             ),
           ],
         ),
