@@ -29,10 +29,11 @@ class _HomePageState extends State<HomePage> {
   List<Widget> _screens() {
     return [
       const Dashboard(),
-      const Menu(),
-      const ScanAndPay(),
       const Support(),
+      const ScanAndPay(),
       const Transactions(),
+      const Menu(),
+
     ];
   }
 
