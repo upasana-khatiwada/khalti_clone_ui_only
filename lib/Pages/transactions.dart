@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:khalti_clone_ui/Pages/main_transaction.dart';
 import 'package:khalti_clone_ui/Pages/transactions_format.dart';
 
 class Transactions extends StatefulWidget {
@@ -46,7 +47,29 @@ class _TransactionsState extends State<Transactions> {
           const TransactionsForrmat(
             date: "16",
             day: "Tuesday",
-            balance: "154.18",),
+            month: "May",
+            balance: "154.18",
+          ),
+          const MainTransaction(
+            title: "Wallet Payment",
+            subtitle: "WorldLink Communication limited",
+            icon: "image/wallet.png",
+            icon2: Icons.arrow_circle_down_outlined,
+            balance: "1,582",
+          ),
+          const TransactionsForrmat(
+            date: "13",
+            day: "Saturday",
+            month: "May",
+            balance: "286.18",
+          ),
+          const MainTransaction(
+            title: "NTC",
+            subtitle: "9843000000",
+            icon: "image/ntc.jpg",
+            icon2: Icons.arrow_circle_up,
+            balance: "100",
+          ),
 
         ],
       ),

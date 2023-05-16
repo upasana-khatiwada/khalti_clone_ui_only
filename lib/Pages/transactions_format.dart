@@ -4,11 +4,14 @@ class TransactionsForrmat extends StatelessWidget {
   final String date;
   final String day;
   final String balance;
+  final String month;
 
   const TransactionsForrmat({
     Key? key,
     this.date = "",
     this.day = "",
+    this.month = "",
+
     required this.balance,
   }) : super(key: key);
 
@@ -39,21 +42,24 @@ class TransactionsForrmat extends StatelessWidget {
                   width: 20,
                 ),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(
                       height: 20,
                     ),
-                    Text(day),
+                    Text(day, style: const TextStyle(fontWeight: FontWeight.w300),),
                     const SizedBox(
                       height: 5,
                     ),
-                    const Text("May 2023"),
+                    Text("$month 2023"),
+                    //const Text(" 2023"),
                   ],
                 ),
                 const SizedBox(
                   width: 150,
                 ),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     const SizedBox(height: 20,),
                     const Text("Closing balance"),
