@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:khalti_clone_ui/Pages/home.dart';
+//import 'package:khalti_clone_ui/Pages/home.dart';
 
 class Support extends StatefulWidget {
   const Support({super.key});
@@ -13,20 +13,20 @@ class _SupportState extends State<Support> {
   Widget build(BuildContext context) {
      return Scaffold(
       //appBar: AppBar(title: const Text('Support'),),
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: GestureDetector(
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return const HomePage();
-              }));
-            },
-            child: const Icon(
-              Icons.arrow_back,
-              color: Colors.black,
-            )),
-        elevation: 0,
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.white,
+      //   leading: GestureDetector(
+      //       onTap: () {
+      //         Navigator.push(context, MaterialPageRoute(builder: (context) {
+      //           return const HomePage();
+      //         }));
+      //       },
+      //       child: const Icon(
+      //         Icons.arrow_back,
+      //         color: Colors.black,
+      //       )),
+      //   elevation: 0,
+      // ),
       body: Padding(padding: const EdgeInsets.all(4),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
