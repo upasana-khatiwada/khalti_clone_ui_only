@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:khalti_clone_ui/Appbar%20functions/my_account.dart';
 import 'package:khalti_clone_ui/Appbar%20functions/promo_code.dart';
-import 'package:khalti_clone_ui/Appbar%20functions/add_money.dart';
+import 'package:khalti_clone_ui/Appbar%20functions/Add%20money/add_money.dart';
 import 'package:khalti_clone_ui/Appbar%20functions/send_money.dart';
 // import 'my_account.dart';
 // import 'promo_code.dart';
