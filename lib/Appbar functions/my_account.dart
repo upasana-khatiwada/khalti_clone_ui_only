@@ -3,8 +3,7 @@ import 'package:khalti_clone_ui/Appbar functions/kyc_details.dart';
 import 'package:khalti_clone_ui/Appbar functions/nominee.dart';
 
 class MyAccount extends StatefulWidget {
-  const MyAccount({super.key});
-
+  const MyAccount({Key? key}) : super(key: key);
   @override
   State<MyAccount> createState() => _MyAccountState();
 }
@@ -287,10 +286,12 @@ class _MyAccountState extends State<MyAccount> {
                 subtitle: const Text("View your KYC details"),
                 trailing: const Icon(Icons.arrow_forward_ios),
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (BuildContext context) {
-                    return const KYCdetails();
-                  }));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const KYCdetails(),
+                    ),
+                  );
                 },
               ),
               ListTile(
@@ -299,10 +300,12 @@ class _MyAccountState extends State<MyAccount> {
                 subtitle: const Text("Add nominee to your Khalti Account"),
                 trailing: const Icon(Icons.arrow_forward_ios),
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (BuildContext context) {
-                    return const Nominee();
-                  }));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Nominee(),
+                    ),
+                  );
                 },
               ),
               Divider(

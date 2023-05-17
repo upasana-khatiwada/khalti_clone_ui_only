@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:khalti_clone_ui/Pages/main_transaction.dart';
-import 'package:khalti_clone_ui/Pages/transactions_format.dart';
+import 'package:khalti_clone_ui/Transactions/main_transaction.dart';
+import 'package:khalti_clone_ui/Transactions/transactions_format.dart';
 
 class Transactions extends StatefulWidget {
   const Transactions({super.key});

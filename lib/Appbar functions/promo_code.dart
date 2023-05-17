@@ -10,6 +10,11 @@ class PromoCode extends StatefulWidget {
 class _PromoCodeState extends State<PromoCode> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(title: const Text('Kyc details'),),
+      body: const Center(
+        child: Text('kyc details',style: TextStyle(fontSize: 40),)
+      ),
+    );
   }
 }

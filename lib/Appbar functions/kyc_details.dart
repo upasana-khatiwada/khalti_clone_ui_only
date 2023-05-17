@@ -5,6 +5,11 @@ class KYCdetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(title: const Text('Kyc details'),),
+      body: const Center(
+        child: Text('kyc details',style: TextStyle(fontSize: 40),)
+      ),
+    );
   }
 }
