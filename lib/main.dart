@@ -8,7 +8,7 @@ void main() {
 
 
 class KhaltiApp extends StatefulWidget {
-  const KhaltiApp({super.key});
+   const KhaltiApp({Key? key}) : super(key: key);
 
   @override
   State<KhaltiApp> createState() => _KhaltiAppState();

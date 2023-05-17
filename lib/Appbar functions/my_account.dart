@@ -2,13 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:khalti_clone_ui/Appbar functions/kyc_details.dart';
 import 'package:khalti_clone_ui/Appbar functions/nominee.dart';
 
-class MyAccount extends StatefulWidget {
+class MyAccount extends StatelessWidget {
   const MyAccount({Key? key}) : super(key: key);
-  @override
-  State<MyAccount> createState() => _MyAccountState();
-}
-
-class _MyAccountState extends State<MyAccount> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
