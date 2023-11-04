@@ -7,7 +7,6 @@ import 'package:khalti_clone_ui/Pages/transactions.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'dart:async';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -29,11 +28,10 @@ class _HomePageState extends State<HomePage> {
   List<Widget> _screens() {
     return [
       const Dashboard(),
-      const Support(),
+      Support(controller: controller),
       const ScanAndPay(),
-      const Transactions(),
+       Transactions(controller: controller),
       const Menu(),
-
     ];
   }
 
@@ -65,10 +63,10 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.white,
               )
             : Icon(
-              Icons.qr_code,
-              size: 30,
-              color: Colors.grey.shade700,
-            ),
+                Icons.qr_code,
+                size: 30,
+                color: Colors.grey.shade700,
+              ),
         //inactiveColorPrimary: Colors.purple,
         activeColorPrimary: Colors.purple,
         title: "Scan & Pay",
@@ -82,7 +80,12 @@ class _HomePageState extends State<HomePage> {
         title: "Transactions",
       ),
       PersistentBottomNavBarItem(
-        icon: _isBulbOn ?  Icon(Icons.lightbulb_outline,color: Colors.yellow.shade800,) : const Icon(Icons.menu),
+        icon: _isBulbOn
+            ? Icon(
+                Icons.lightbulb_outline,
+                color: Colors.yellow.shade800,
+              )
+            : const Icon(Icons.menu),
         // icon: const Icon(
         //   Icons.menu,
         // ),
@@ -102,7 +105,8 @@ class _HomePageState extends State<HomePage> {
       currentScreen = currentTab;
     });
   }
-   @override
+
+  @override
   void initState() {
     super.initState();
     // Start the timer to toggle the bulb icon every 3 seconds
@@ -118,6 +122,24 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    return PersistentTabView(
+      context,
+      screens: _screens(),
+      items: _navBarItem(),
+      controller: controller,
+      backgroundColor: Colors.grey.shade300,
+      decoration: NavBarDecoration(borderRadius: BorderRadius.circular(1)),
+      navBarStyle:
+          currentScreen == 0 ? NavBarStyle.style15 : NavBarStyle.simple,
+      onItemSelected: (int currentIndex) {
+        _tabSelected(currentIndex);
+      },
+    );
+  }
+}
+
+
+
 //     return Scaffold(
 //       body: PageStorage(
 //         bucket: bucket,
@@ -264,19 +286,3 @@ class _HomePageState extends State<HomePage> {
 //         ),
 //       ),
 //     );
-
-    return PersistentTabView(
-      context,
-      screens: _screens(),
-      items: _navBarItem(),
-      controller: controller,
-      backgroundColor: Colors.grey.shade300,
-      decoration: NavBarDecoration(borderRadius: BorderRadius.circular(1)),
-      navBarStyle: currentScreen == 0 ? NavBarStyle.style15 : NavBarStyle.simple,
-
-      onItemSelected: (int currentIndex){
-        _tabSelected(currentIndex);
-      },
-    );
-  }
-}

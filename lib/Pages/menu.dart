@@ -83,12 +83,12 @@ class _MenuState extends State<Menu> {
                             const SizedBox(
                               width: 10,
                             ),
-                            Column(
+                            const Column(
                               //mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Row(
-                                  children: const [
+                                  children: [
                                     Text(
                                       "Rs ",
                                       style: TextStyle(fontSize: 16),
@@ -108,7 +108,7 @@ class _MenuState extends State<Menu> {
                                     )
                                   ],
                                 ),
-                                const Text(
+                                Text(
                                   "Khalti Balance",
                                   style: TextStyle(fontSize: 14),
                                 )
@@ -140,12 +140,12 @@ class _MenuState extends State<Menu> {
                             const SizedBox(
                               width: 10,
                             ),
-                            Column(
+                            const Column(
                               //mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Row(
-                                  children: const [
+                                  children: [
                                     Text(
                                       "KP ",
                                       style: TextStyle(fontSize: 16),
@@ -158,7 +158,7 @@ class _MenuState extends State<Menu> {
                                     ),
                                   ],
                                 ),
-                                const Text(
+                                Text(
                                   "Khalti Points",
                                   style: TextStyle(fontSize: 14),
                                 )

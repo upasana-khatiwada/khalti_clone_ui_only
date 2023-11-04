@@ -92,10 +92,10 @@ class MyAccount extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      children: const [
+                      children: [
                         Icon(
                           Icons.person_pin_sharp,
                           color: Colors.green,
@@ -175,10 +175,10 @@ class MyAccount extends StatelessWidget {
                         const SizedBox(
                           width: 20,
                         ),
-                        Column(
+                        const Column(
                           children: [
                             Row(
-                              children: const [
+                              children: [
                                 Text(
                                   "Rs ",
                                   style: TextStyle(fontSize: 14),
@@ -191,7 +191,7 @@ class MyAccount extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            const Text(
+                            Text(
                               "Available Balance",
                               style: TextStyle(fontSize: 11),
                             )

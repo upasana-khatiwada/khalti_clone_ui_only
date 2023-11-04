@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 //import 'package:khalti_clone_ui/Pages/home.dart';
 
 class Support extends StatefulWidget {
-  const Support({super.key});
+    final PersistentTabController controller;
+  const Support({Key? key, required this.controller}) : super(key: key);
 
   @override
   State<Support> createState() => _SupportState();
@@ -13,20 +15,23 @@ class _SupportState extends State<Support> {
   Widget build(BuildContext context) {
     return Scaffold(
         //appBar: AppBar(title: const Text('Support'),),
-        // appBar: AppBar(
-        //   backgroundColor: Colors.white,
-        //   leading: GestureDetector(
-        //       onTap: () {
-        //         Navigator.push(context, MaterialPageRoute(builder: (context) {
-        //           return const HomePage();
-        //         }));
-        //       },
-        //       child: const Icon(
-        //         Icons.arrow_back,
-        //         color: Colors.black,
-        //       )),
-        //   elevation: 0,
-        // ),
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          leading: GestureDetector(
+              onTap: () {
+                // Navigator.push(context, MaterialPageRoute(builder: (context) {
+                //   return const HomePage();
+                // }));
+              //  Navigator.pop(context);
+               widget.controller.jumpToTab(0);
+
+              },
+              child: const Icon(
+                Icons.arrow_back,
+                color: Colors.black,
+              )),
+          elevation: 0,
+        ),
         body: SingleChildScrollView(
           child: Padding(
               padding: const EdgeInsets.all(4),
@@ -62,8 +67,8 @@ class _SupportState extends State<Support> {
             const SizedBox(
               height: 10,
             ),
-            Row(
-              children: const [
+            const Row(
+              children: [
                 Padding(
                   padding: EdgeInsets.all(4.0),
                   child: Image(

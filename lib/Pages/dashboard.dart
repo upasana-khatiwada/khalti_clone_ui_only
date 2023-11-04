@@ -45,9 +45,9 @@ class _DashboardState extends State<Dashboard> {
                     ),
                     borderRadius: BorderRadius.circular(9),
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: Row(children: const [
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Row(children: [
                       Text("Rs 50 Top-up ma OnePluss 11"),
                       SizedBox(
                         width: 60.0,
@@ -79,8 +79,8 @@ class _DashboardState extends State<Dashboard> {
                 child: Padding(
                   padding: const EdgeInsets.all(4),
                   child: Row(children: [
-                    Column(
-                      children: const [
+                    const Column(
+                      children: [
                         Text(
                           "Khalti Bank Direct",
                           style: TextStyle(
@@ -130,9 +130,9 @@ class _DashboardState extends State<Dashboard> {
               // decoration: const BoxDecoration(
               //   color: Colors.white,
               // ),
-              child: Column(
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   SizedBox(
                     height: 10,
                   ),
@@ -174,10 +174,10 @@ class _DashboardState extends State<Dashboard> {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
+                        child: const Padding(
+                          padding: EdgeInsets.all(4.0),
                           child: Column(
-                            children: const [
+                            children: [
                               Text(
                                 "KHALTI ...",
                                 style: TextStyle(
@@ -208,10 +208,10 @@ class _DashboardState extends State<Dashboard> {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                        child: const Padding(
+                          padding: EdgeInsets.all(8.0),
                           child: Column(
-                            children: const [
+                            children: [
                               Text(
                                 "BIKE/CAR..",
                                 style: TextStyle(
@@ -415,8 +415,8 @@ class _DashboardState extends State<Dashboard> {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 5.0),
                     child: Row(children: [
-                      Column(
-                        children: const [
+                      const Column(
+                        children: [
                            Text(
                             " Get health benefits worth rs 3.5 lakhs ",
                             style: TextStyle(fontWeight: FontWeight.bold),

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:khalti_clone_ui/Transactions/main_transaction.dart';
 import 'package:khalti_clone_ui/Transactions/transactions_format.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class Transactions extends StatefulWidget {
-  const Transactions({super.key});
-
+   final PersistentTabController controller;
+  const Transactions({Key? key, required this.controller}) : super(key: key);
   @override
   State<Transactions> createState() => _TransactionsState();
 }
@@ -14,6 +15,23 @@ class _TransactionsState extends State<Transactions> {
   Widget build(BuildContext context) {
     return Scaffold(
         //appBar: AppBar(title: const Text('Transactions'),),
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          leading: GestureDetector(
+              onTap: () {
+                // Navigator.push(context, MaterialPageRoute(builder: (context) {
+                //   return const HomePage();
+                // }));
+              //  Navigator.pop(context);
+               widget.controller.jumpToTab(0);
+
+              },
+              child: const Icon(
+                Icons.arrow_back,
+                color: Colors.black,
+              )),
+          elevation: 0,
+        ),
         body: Padding(
       padding: const EdgeInsets.all(5),
       child: Column(

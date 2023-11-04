@@ -246,8 +246,8 @@ class _MyAppBarState extends State<MyAppBar> {
                     const SizedBox(
                       height: 10,
                     ),
-                    Column(
-                      children: const [
+                    const Column(
+                      children: [
                         Text(
                           "Add ",
                           style: TextStyle(
@@ -294,8 +294,8 @@ class _MyAppBarState extends State<MyAppBar> {
                           const SizedBox(
                             height: 10,
                           ),
-                          Column(
-                            children: const [
+                          const Column(
+                            children: [
                               Text(
                                 "Send ",
                                 style: TextStyle(
